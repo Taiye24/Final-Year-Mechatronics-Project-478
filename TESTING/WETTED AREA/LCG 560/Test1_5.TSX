@@ -1,0 +1,23 @@
+CATMAN TEST FILE
+PATH=C:\Users\MEGLAB\Desktop\Skripsies2026\Raji\WETTED AREA\LCG 560
+Job name=Job1
+Data file with path=C:\Users\MEGLAB\Desktop\Skripsies2026\Raji\WETTED AREA\LCG 560\Test1_5.XLSX
+Data file=Test1_5.XLSX
+File comment=
+Operator=
+Department=
+Comment=
+Default sample rate=300 Hz
+Slow sample rate=10 Hz
+Fast sample rate=4800 Hz
+Number of samples default sample rate=9547
+Number of samples slow sample rate=0
+Number of samples fast sample rate=0
+Saving mode=PROMPT
+Start mode=Manual
+Start time=2026/09/29 19:36:28
+Stop mode=Manual
+Stop time=2026/09/29 19:37:01
+catmanEasy/AP version=4.2.2.14
+Numerical precision=8 Byte Float
+DATAFILE=C:\Users\MEGLAB\Desktop\Skripsies2026\Raji\WETTED AREA\LCG 560\Test1_5.XLSX

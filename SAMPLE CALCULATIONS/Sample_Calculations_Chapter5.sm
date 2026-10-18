@@ -1,0 +1,4272 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?application progid="SMath Solver" version="1.3.0.9126"?>
+<worksheet xmlns="http://smath.info/schemas/worksheet/1.0">
+  <settings ppi="120">
+    <identity>
+      <id>03655132-2338-436a-bd7b-7ec29d582873</id>
+      <revision>13</revision>
+    </identity>
+    <calculation>
+      <precision>4</precision>
+      <exponentialThreshold>5</exponentialThreshold>
+      <trailingZeros>false</trailingZeros>
+      <significantDigitsMode>false</significantDigitsMode>
+      <mixedNumbers>false</mixedNumbers>
+      <roundingMode>0</roundingMode>
+      <approximateEqualAccuracy>3</approximateEqualAccuracy>
+      <fractions>decimal</fractions>
+    </calculation>
+    <pageModel active="false" viewMode="2" printGrid="false" printAreas="true" simpleEqualsOnly="false" printBackgroundImages="true" hideElementsHighlightings="true">
+      <paper id="9" orientation="Landscape" width="1169" height="827" />
+      <margins left="39" right="39" top="49" bottom="49" />
+      <header alignment="Center" color="#a9a9a9">&amp;[DATE] &amp;[TIME] - &amp;[FILENAME]</header>
+      <footer alignment="Center" color="#a9a9a9">&amp;[PAGENUM] / &amp;[COUNT]</footer>
+      <backgrounds />
+    </pageModel>
+    <dependencies>
+      <assembly name="SMath Core" version="1.73.9126.0" guid="a37cba83-b69c-4c71-9992-55ff666763bd" />
+      <assembly name="MathRegion" version="1.73.9126.0" guid="02f1ab51-215b-466e-a74d-5d8b1cf85e8d" />
+      <assembly name="TextRegion" version="1.73.9126.0" guid="485d28c5-349a-48b6-93be-12a35a1c1e39" />
+    </dependencies>
+  </settings>
+  <regions type="content">
+    <region left="27" top="9" width="1006" height="56" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-weight: bold;">Sample calculations, Chapter 5 (Savitsky and M-factor comparison): one worked example of each calculation type </p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="81" width="509" height="32" border="true" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p>1. Inputs (Table 5.1): LCG 640 mm, water at 15.8 °C</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="126" width="113" height="33" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">b</e>
+          <e type="operand">0.4</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="126" width="70" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Beam</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="171" width="151" height="33" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">W</e>
+          <e type="operand">264.87</e>
+          <e type="operand" style="unit">N</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="171" width="211" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Displacement weight</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="216" width="80" height="33" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">β</e>
+          <e type="operand">18</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="216" width="255" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Deadrise angle (degrees)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="270" width="151" height="33" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">LCG</e>
+          <e type="operand">0.64</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="270" width="189" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">LCG from transom</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="315" width="164" height="33" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">VCG</e>
+          <e type="operand">0.092</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="315" width="169" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">VCG above keel</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="360" width="341" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Thrust inclination to keel (degrees)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="405" width="67" height="33" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">ε</e>
+          <e type="operand">0</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="450" width="372" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Water density at 15.8 °C, ITTC (2011)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="495" width="197" height="79" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">ρ</e>
+          <e type="operand">998.9783</e>
+          <e type="operand" style="unit">kg</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="567" width="146" height="79" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">g</e>
+          <e type="operand">9.81</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="567" width="255" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Gravitational acceleration</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="639" width="154" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">ΔC.f</e>
+          <e type="operand">0.0004</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="639" width="276" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">ATTC roughness allowance</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="693" width="370" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Thrust line to CG, negative above CG</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="729" width="172" height="33" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">f</e>
+          <e type="operand">0.0696</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="783" width="422" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Kinematic viscosity at 15.8 °C, ITTC (2011)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="819" width="453" height="79" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">ν</e>
+          <e type="operand">1.115</e>
+          <e type="operand">10</e>
+          <e type="operand">6</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.115</e>
+          <e type="operand">10</e>
+          <e type="operand">6</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">Gy</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="45" top="900" width="632" height="33" border="true" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p>2. Speed and load coefficients at the measured point Fn∇ = 2.94</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="945" width="442" height="33" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Measured Fn∇ (step 10, mean of three sets)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="990" width="170" height="33" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">Fn</e>
+          <e type="operand">2.940551</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="1035" width="129" height="33" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">√(g∇^(1/3))</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="1080" width="347" height="112" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">V.ref</e>
+          <e type="operand">g</e>
+          <e type="operand">W</e>
+          <e type="operand">ρ</e>
+          <e type="operand">g</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">/</e>
+          <e type="bracket">(</e>
+          <e type="operand">1</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">/</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="function" args="1">sqrt</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.7158</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="45" top="1206" width="269" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">V</e>
+          <e type="operand">Fn</e>
+          <e type="operand">V.ref</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">5.0454</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="1206" width="76" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Speed</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="1251" width="217" height="62" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">C.v</e>
+          <e type="operand">V</e>
+          <e type="operand">g</e>
+          <e type="operand">b</e>
+          <e type="operator" args="2">*</e>
+          <e type="function" args="1">sqrt</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">2.547</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="1251" width="304" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Speed coefficient Cv = V/√(gb)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="1323" width="338" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Load coefficient CLβ = Δ/(½ρV²b²)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="1368" width="339" height="79" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">C.Lb</e>
+          <e type="operand">W</e>
+          <e type="operand">0.5</e>
+          <e type="operand">ρ</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">V</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">b</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.1302</e>
+        </result>
+      </math>
+    </region>
+    <region left="45" top="1458" width="656" height="32" border="true" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p>3. Equilibrium trim from the code, and the lift equations checked at it</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="1503" width="572" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Equilibrium trim from Savitsky_Code_Test_m_Factor_All.m</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="1539" width="195" height="33" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">τ</e>
+          <e type="operand">4.878805576</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="1593" width="216" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">τr</e>
+          <e type="operand">τ</e>
+          <e type="operand">π</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">180</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.0852</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="1593" width="108" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Trim (rad)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="1665" width="216" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">βr</e>
+          <e type="operand">β</e>
+          <e type="operand">π</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">180</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.3142</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="1665" width="150" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Deadrise (rad)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="1737" width="152" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">εr</e>
+          <e type="operand">ε</e>
+          <e type="operand">π</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">180</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="1737" width="226" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Thrust inclination (rad)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="1809" width="466" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Zero-deadrise lift coefficient, solved by the code</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="1854" width="229" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">C.L0</e>
+          <e type="operand">0.1707007488</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="1899" width="504" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Check: CLβ = CL0 − 0.0065 β CL0^0.6, residual ≈ 0</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="1944" width="570" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">r.1</e>
+          <e type="operand">C.L0</e>
+          <e type="operand">0.0065</e>
+          <e type="operand">β</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">C.L0</e>
+          <e type="operand">0.6</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">-</e>
+          <e type="operand">C.Lb</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.0437</e>
+          <e type="operand">10</e>
+          <e type="operand">12</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="45" top="2016" width="523" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Mean wetted length-to-beam ratio, solved by the code</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="2061" width="195" height="33" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">λ</e>
+          <e type="operand">2.698961424</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="2160" width="646" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Check: CL0 = τ^1.1 (0.012 λ^0.5 + 0.0055 λ^2.5 / Cv²), residual ≈ 0</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="2205" width="729" height="108" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">r.2</e>
+          <e type="operand">τ</e>
+          <e type="operand">1.1</e>
+          <e type="operator" args="2">^</e>
+          <e type="operand">0.012</e>
+          <e type="operand">λ</e>
+          <e type="operand">0.5</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">0.0055</e>
+          <e type="operand">λ</e>
+          <e type="operand">2.5</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">C.v</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">+</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">C.L0</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.6687</e>
+          <e type="operand">10</e>
+          <e type="operand">11</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="1">-</e>
+        </result>
+      </math>
+    </region>
+    <region left="45" top="2313" width="156" height="32" border="true" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p>4. Friction drag</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="2349" width="383" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">C.Ld</e>
+          <e type="operand">0.012</e>
+          <e type="operand">λ</e>
+          <e type="operand">0.5</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">τ</e>
+          <e type="operand">1.1</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.1127</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="2349" width="226" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Dynamic lift coefficient</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="2403" width="216" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Mean bottom velocity</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="2439" width="542" height="93" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">V.m</e>
+          <e type="operand">V</e>
+          <e type="operand">1</e>
+          <e type="operand">C.Ld</e>
+          <e type="operand">0.0065</e>
+          <e type="operand">β</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">C.Ld</e>
+          <e type="operand">0.6</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operand">λ</e>
+          <e type="operand">τr</e>
+          <e type="function" args="1">cos</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">-</e>
+          <e type="function" args="1">sqrt</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">4.9687</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="45" top="2547" width="312" height="68" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">Re</e>
+          <e type="operand">V.m</e>
+          <e type="operand">λ</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">b</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">ν</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">4.8109</e>
+          <e type="operand">10</e>
+          <e type="operand">6</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="2547" width="181" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Reynolds number</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="2619" width="485" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Schoenherr friction coefficient, solved by the code</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="2664" width="244" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">C.f</e>
+          <e type="operand">0.003315556866</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="2709" width="446" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Check: 0.242/√Cf = log10(Re Cf), residual ≈ 0</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="2754" width="482" height="81" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">r.3</e>
+          <e type="operand">0.242</e>
+          <e type="operand">C.f</e>
+          <e type="function" args="1">sqrt</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">Re</e>
+          <e type="operand">C.f</e>
+          <e type="operator" args="2">*</e>
+          <e type="function" args="1">ln</e>
+          <e type="operand">10</e>
+          <e type="function" args="1">ln</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.7018</e>
+          <e type="operand">10</e>
+          <e type="operand">10</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="1">-</e>
+        </result>
+      </math>
+    </region>
+    <region left="45" top="2889" width="133" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Friction drag</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="2925" width="463" height="90" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">D.f</e>
+          <e type="operand">C.f</e>
+          <e type="operand">ΔC.f</e>
+          <e type="operator" args="2">+</e>
+          <e type="bracket">(</e>
+          <e type="operand">ρ</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">V.m</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">λ</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">b</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">2</e>
+          <e type="operand">βr</e>
+          <e type="function" args="1">cos</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">20.8043</e>
+          <e type="operand" style="unit">N</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="45" top="3006" width="134" height="32" border="true" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p>5. Total drag</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="3051" width="416" height="70" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">D</e>
+          <e type="operand">W</e>
+          <e type="operand">τr</e>
+          <e type="function" args="1">tan</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">D.f</e>
+          <e type="operand">τr</e>
+          <e type="function" args="1">cos</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">43.4886</e>
+          <e type="operand" style="unit">N</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="3051" width="280" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Drag D = Δ tan τ + Df / cos τ</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="3123" width="189" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">DW</e>
+          <e type="operand">D</e>
+          <e type="operand">W</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.1642</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="3123" width="245" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Predicted D/Δ (Savitsky)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="3195" width="405" height="32" border="true" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p>6. Moment balance at the equilibrium trim</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="3231" width="295" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Centre-of-pressure coefficient</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="3267" width="434" height="133" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">C.p</e>
+          <e type="operand">0.75</e>
+          <e type="operand">1</e>
+          <e type="operand">5.21</e>
+          <e type="operand">C.v</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">λ</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">2.39</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.6078</e>
+        </result>
+      </math>
+    </region>
+    <region left="45" top="3393" width="385" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Distance from centre of pressure to CG</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="3429" width="354" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">l.c</e>
+          <e type="operand">LCG</e>
+          <e type="operand">C.p</e>
+          <e type="operand">λ</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">b</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.0161</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="1">-</e>
+        </result>
+      </math>
+    </region>
+    <region left="45" top="3483" width="357" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">a</e>
+          <e type="operand">VCG</e>
+          <e type="operand">b</e>
+          <e type="operand">4</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">βr</e>
+          <e type="function" args="1">tan</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.0595</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="3483" width="181" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Friction-force arm</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="3591" width="429" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Pitching-moment residual, ≈ 0 at equilibrium</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="3636" width="916" height="74" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">M.res</e>
+          <e type="operand">W</e>
+          <e type="operand">1</e>
+          <e type="operand">τr</e>
+          <e type="function" args="1">sin</e>
+          <e type="operand">τr</e>
+          <e type="operand">εr</e>
+          <e type="operator" args="2">+</e>
+          <e type="function" args="1">sin</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operand">l.c</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">τr</e>
+          <e type="function" args="1">cos</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">f</e>
+          <e type="operand">τr</e>
+          <e type="function" args="1">sin</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">D.f</e>
+          <e type="operand">a</e>
+          <e type="operand">f</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.9135</e>
+          <e type="operand">10</e>
+          <e type="operand">8</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">J</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="45" top="3717" width="333" height="32" border="true" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p>7. Blount and Fox (1976) M-factor</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="3762" width="164" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">r</e>
+          <e type="operand">LCG</e>
+          <e type="operand">b</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.6</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="3762" width="129" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">LCG / beam</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="3834" width="92" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">M-factor</p>
+        </content>
+      </text>
+    </region>
+    <region left="0" top="3870" width="847" height="54" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">M</e>
+          <e type="operand">0.98</e>
+          <e type="operand">2</e>
+          <e type="operand">r</e>
+          <e type="operand">1.45</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">-2</e>
+          <e type="operand">Fn</e>
+          <e type="operand">0.85</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">*</e>
+          <e type="function" args="1">exp</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">3</e>
+          <e type="operand">r</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">-3</e>
+          <e type="operand">Fn</e>
+          <e type="operand">0.85</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">*</e>
+          <e type="function" args="1">exp</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.0314</e>
+        </result>
+      </math>
+    </region>
+    <region left="45" top="3924" width="237" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">DW.M</e>
+          <e type="operand">M</e>
+          <e type="operand">DW</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.1693</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="3924" width="309" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Predicted D/Δ with the M-factor</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="3978" width="323" height="32" border="true" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p>8. Prediction error (Equation 5.1)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="4023" width="211" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">DW.meas</e>
+          <e type="operand">0.171417</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="4023" width="347" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Measured D/Δ (mean of three sets)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="4104" width="198" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">τ.meas</e>
+          <e type="operand">5.381742</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="4104" width="206" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Measured trim (deg)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="4176" width="364" height="77" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">e.S</e>
+          <e type="operand">DW</e>
+          <e type="operand">DW.meas</e>
+          <e type="operator" args="2">-</e>
+          <e type="operand">DW.meas</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">100</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">4.2169</e>
+          <e type="operator" args="1">-</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="4176" width="232" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Savitsky drag error (%)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="4338" width="362" height="77" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">e.M</e>
+          <e type="operand">DW.M</e>
+          <e type="operand">DW.meas</e>
+          <e type="operator" args="2">-</e>
+          <e type="operand">DW.meas</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">100</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.214</e>
+          <e type="operator" args="1">-</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="4338" width="335" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Savitsky + M-factor drag error (%)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="4410" width="338" height="77" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">e.τ</e>
+          <e type="operand">τ</e>
+          <e type="operand">τ.meas</e>
+          <e type="operator" args="2">-</e>
+          <e type="operand">τ.meas</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">100</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">9.3452</e>
+          <e type="operator" args="1">-</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="4410" width="147" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Trim error (%)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="4491" width="835" height="32" border="true" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p>9. Mean absolute error (Equation 5.2): Savitsky drag, LCG 640 mm, 8 compared points</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="4545" width="185" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">e.1</e>
+          <e type="operand">-9.748040286</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="4545" width="219" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Point 1 drag error (%)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="4590" width="185" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">e.2</e>
+          <e type="operand">-4.334887397</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="4590" width="219" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Point 2 drag error (%)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="4635" width="185" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">e.3</e>
+          <e type="operand">-4.383830343</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="4635" width="219" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Point 3 drag error (%)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="4689" width="185" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">e.4</e>
+          <e type="operand">-4.119027373</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="4689" width="219" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Point 4 drag error (%)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="4734" width="185" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">e.5</e>
+          <e type="operand">-4.216903278</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="4734" width="219" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Point 5 drag error (%)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="4779" width="185" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">e.6</e>
+          <e type="operand">-3.891702261</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="4779" width="219" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Point 6 drag error (%)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="4833" width="185" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">e.7</e>
+          <e type="operand">-4.149225416</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="4833" width="219" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Point 7 drag error (%)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="4878" width="185" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">e.8</e>
+          <e type="operand">-4.342719486</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="4878" width="219" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Point 8 drag error (%)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="4923" width="244" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Mean absolute error (%)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="4968" width="635" height="70" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">MAE</e>
+          <e type="operand">e.1</e>
+          <e type="function" args="1">abs</e>
+          <e type="operand">e.2</e>
+          <e type="function" args="1">abs</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">e.3</e>
+          <e type="function" args="1">abs</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">e.4</e>
+          <e type="function" args="1">abs</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">e.5</e>
+          <e type="function" args="1">abs</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">e.6</e>
+          <e type="function" args="1">abs</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">e.7</e>
+          <e type="function" args="1">abs</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">e.8</e>
+          <e type="function" args="1">abs</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">8</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">4.8983</e>
+        </result>
+      </math>
+    </region>
+    <region left="45" top="5049" width="817" height="32" border="true" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p>10. Wetted lengths (Equations 5.3 and 5.4): LCG 560 mm, 4.10 m/s, water at 19.0 °C</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="5112" width="453" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Predicted trim (deg), Savitsky_Wetted_Area.m</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="5175" width="206" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">τ.p</e>
+          <e type="operand">6.652861816</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="5229" width="206" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">λ.p</e>
+          <e type="operand">2.447397914</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="5229" width="121" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Predicted λ</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="5274" width="269" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Lk − Lc = b tan β / (π tan τ)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="5346" width="333" height="99" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">ΔL</e>
+          <e type="operand">b</e>
+          <e type="operand">βr</e>
+          <e type="function" args="1">tan</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">π</e>
+          <e type="operand">τ.p</e>
+          <e type="operand">π</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">180</e>
+          <e type="operator" args="2">/</e>
+          <e type="function" args="1">tan</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.3547</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="45" top="5454" width="310" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">L.kp</e>
+          <e type="operand">λ.p</e>
+          <e type="operand">b</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">ΔL</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.1563</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="5454" width="282" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Predicted wetted keel length</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="5553" width="307" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">L.cp</e>
+          <e type="operand">λ.p</e>
+          <e type="operand">b</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">ΔL</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.8016</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="5553" width="294" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Predicted wetted chine length</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="5625" width="149" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">L.k</e>
+          <e type="operand">1.175</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="5625" width="287" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Measured wetted keel length</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="5679" width="149" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">L.c</e>
+          <e type="operand">0.845</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="5679" width="299" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Measured wetted chine length</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="5787" width="235" height="68" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">λ.m</e>
+          <e type="operand">L.k</e>
+          <e type="operand">L.c</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">2</e>
+          <e type="operand">b</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">2.525</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="5787" width="265" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Measured λ (Equation 5.3)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="5859" width="306" height="77" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">e.λ</e>
+          <e type="operand">λ.p</e>
+          <e type="operand">λ.m</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">1</e>
+          <e type="operator" args="2">-</e>
+          <e type="operand">100</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">3.0733</e>
+          <e type="operator" args="1">-</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="5859" width="271" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Error in λ, Equation 5.1 (%)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="5931" width="364" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Error in keel length, Equation 5.1 (%)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="5976" width="326" height="77" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">e.Lk</e>
+          <e type="operand">L.kp</e>
+          <e type="operand">L.k</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">1</e>
+          <e type="operator" args="2">-</e>
+          <e type="operand">100</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.5914</e>
+          <e type="operator" args="1">-</e>
+        </result>
+      </math>
+    </region>
+    <region left="45" top="6048" width="376" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Error in chine length, Equation 5.1 (%)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="6093" width="326" height="77" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">e.Lc</e>
+          <e type="operand">L.cp</e>
+          <e type="operand">L.c</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">1</e>
+          <e type="operator" args="2">-</e>
+          <e type="operand">100</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">5.1341</e>
+          <e type="operator" args="1">-</e>
+        </result>
+      </math>
+    </region>
+    <region left="45" top="6201" width="771" height="33" border="true" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p>11. Savitsky drag at the measured trim (Section 5.6): LCG 640 mm, Fn∇ = 2.94</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="6246" width="797" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p>Mean wetted length-to-beam ratio at the measured trim τ.meas, solved by the code</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="6291" width="229" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">λ.mt</e>
+          <e type="operand">2.4547478102</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="6345" width="646" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p>Check: CL0 = τ^1.1 (0.012 λ^0.5 + 0.0055 λ^2.5 / Cv²), residual ≈ 0</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="6390" width="811" height="116" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">r.4</e>
+          <e type="operand">τ.meas</e>
+          <e type="operand">1.1</e>
+          <e type="operator" args="2">^</e>
+          <e type="operand">0.012</e>
+          <e type="operand">λ.mt</e>
+          <e type="operand">0.5</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">0.0055</e>
+          <e type="operand">λ.mt</e>
+          <e type="operand">2.5</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">C.v</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">+</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">C.L0</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.6216</e>
+          <e type="operand">10</e>
+          <e type="operand">12</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="1">-</e>
+        </result>
+      </math>
+    </region>
+    <region left="45" top="6471" width="265" height="68" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">τ.mr</e>
+          <e type="operand">τ.meas</e>
+          <e type="operand">π</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">180</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.0939</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="6471" width="201" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Measured trim (rad)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="6543" width="454" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">C.Ld2</e>
+          <e type="operand">0.012</e>
+          <e type="operand">λ.mt</e>
+          <e type="operand">0.5</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">τ.meas</e>
+          <e type="operand">1.1</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.1197</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="6543" width="226" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Dynamic lift coefficient</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="6624" width="573" height="104" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">V.m2</e>
+          <e type="operand">V</e>
+          <e type="operand">1</e>
+          <e type="operand">C.Ld2</e>
+          <e type="operand">0.0065</e>
+          <e type="operand">β</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">C.Ld2</e>
+          <e type="operand">0.6</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operand">λ.mt</e>
+          <e type="operand">τ.mr</e>
+          <e type="function" args="1">cos</e>
+          <e type="operator" args="2">*</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">-</e>
+          <e type="function" args="1">sqrt</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">4.9548</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="6624" width="216" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Mean bottom velocity</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="6705" width="353" height="68" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">Re.2</e>
+          <e type="operand">V.m2</e>
+          <e type="operand">λ.mt</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">b</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">ν</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">4.3633</e>
+          <e type="operand">10</e>
+          <e type="operand">6</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="6705" width="181" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Reynolds number</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="6777" width="485" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p>Schoenherr friction coefficient, solved by the code</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="6822" width="254" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">C.f2</e>
+          <e type="operand">0.003371670355</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="6876" width="446" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p>Check: 0.242/√Cf = log10(Re Cf), residual ≈ 0</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="6921" width="502" height="81" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">r.5</e>
+          <e type="operand">0.242</e>
+          <e type="operand">C.f2</e>
+          <e type="function" args="1">sqrt</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">Re.2</e>
+          <e type="operand">C.f2</e>
+          <e type="operator" args="2">*</e>
+          <e type="function" args="1">ln</e>
+          <e type="operand">10</e>
+          <e type="function" args="1">ln</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">2.5006</e>
+          <e type="operand">10</e>
+          <e type="operand">10</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="1">-</e>
+        </result>
+      </math>
+    </region>
+    <region left="45" top="7002" width="514" height="92" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">D.f2</e>
+          <e type="operand">C.f2</e>
+          <e type="operand">ΔC.f</e>
+          <e type="operator" args="2">+</e>
+          <e type="bracket">(</e>
+          <e type="operand">ρ</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">V.m2</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">λ.mt</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">b</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">2</e>
+          <e type="operand">βr</e>
+          <e type="function" args="1">cos</e>
+          <e type="operator" args="2">*</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">19.1001</e>
+          <e type="operand" style="unit">N</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="7002" width="133" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Friction drag</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="7074" width="441" height="79" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">D.2</e>
+          <e type="operand">W</e>
+          <e type="operand">τ.mr</e>
+          <e type="function" args="1">tan</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">D.f2</e>
+          <e type="operand">τ.mr</e>
+          <e type="function" args="1">cos</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">44.1371</e>
+          <e type="operand" style="unit">N</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="7074" width="262" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Drag at the measured trim</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="7155" width="388" height="106" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">e.mt</e>
+          <e type="operand">D.2</e>
+          <e type="operand">W</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">DW.meas</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operand">DW.meas</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">100</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">2.7886</e>
+          <e type="operator" args="1">-</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="7155" width="452" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Error, Equation 5.1 (%); MAE 4.2% at 640 mm</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="7236" width="817" height="32" border="true" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p>12. Full-scale vessel (Section 5.5): scale factor, sea water and scaled Savitsky inputs</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="7281" width="200" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">SF</e>
+          <e type="operand">50</e>
+          <e type="operand">1.6</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">31.25</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="7281" width="194" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Length scale factor</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="7353" width="204" height="79" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">ρ.m</e>
+          <e type="operand">998.8125</e>
+          <e type="operand" style="unit">kg</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="7353" width="491" height="56" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Model water at 16.8 °C (LCG 560 mm runs), ITTC (2011)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="7434" width="257" height="79" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">ν.m</e>
+          <e type="operand">1.0867</e>
+          <e type="operand">10</e>
+          <e type="operand">6</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="7434" width="414" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Model water kinematic viscosity at 16.8 °C</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="7515" width="271" height="76" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">∇.m</e>
+          <e type="operand">W</e>
+          <e type="operand">ρ.m</e>
+          <e type="operand">g</e>
+          <e type="operator" args="2">*</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.027</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="7515" width="243" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Model displaced volume</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="7587" width="333" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">∇.s</e>
+          <e type="operand">∇.m</e>
+          <e type="operand">SF</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">824.9542</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="7587" width="303" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Vessel displaced volume (SF³)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="7668" width="153" height="79" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">ρ.s</e>
+          <e type="operand">1026</e>
+          <e type="operand" style="unit">kg</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="7668" width="184" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Sea water density</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="7749" width="207" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">μ.s</e>
+          <e type="operand">0.00122</e>
+          <e type="operand" style="unit">Pa</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="7749" width="282" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Sea water dynamic viscosity</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="7794" width="325" height="77" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">ν.s</e>
+          <e type="operand">μ.s</e>
+          <e type="operand">ρ.s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.1891</e>
+          <e type="operand">10</e>
+          <e type="operand">6</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">Gy</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="7794" width="293" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Sea water kinematic viscosity</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="7875" width="347" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">Δ.s</e>
+          <e type="operand">ρ.s</e>
+          <e type="operand">g</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">∇.s</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">8.3032</e>
+          <e type="operand">10</e>
+          <e type="operand">6</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">N</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="7875" width="309" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Vessel displacement (8303 kN)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="7929" width="219" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">b.s</e>
+          <e type="operand">b</e>
+          <e type="operand">SF</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">12.5</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="7929" width="70" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Beam</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="7974" width="301" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">LCG.s</e>
+          <e type="operand">0.56</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">SF</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">17.5</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="7974" width="189" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">LCG from transom</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="8028" width="283" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">VCG.s</e>
+          <e type="operand">VCG</e>
+          <e type="operand">SF</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">2.875</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="8028" width="169" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">VCG above keel</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="8082" width="252" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">f.s</e>
+          <e type="operand">f</e>
+          <e type="operand">SF</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">2.175</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="1">-</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="8082" width="175" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Thrust line to CG</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="8127" width="247" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">L.ps</e>
+          <e type="operand">1.6</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">SF</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">50</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="8127" width="149" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Planing length</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="8181" width="333" height="97" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">V.refs</e>
+          <e type="operand">g</e>
+          <e type="operand">∇.s</e>
+          <e type="operand">1</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">/</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="function" args="1">sqrt</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">9.5919</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="8181" width="255" height="33" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">√(g∇^(1/3)) of the vessel</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="8262" width="843" height="32" border="true" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p>13. ITTC 1957 extrapolation (Equations 5.5–5.12): Run 8, LCG 560 mm, the thrust peak</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="8307" width="304" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">V.m8</e>
+          <e type="operand">3.99944297075272</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="8307" width="306" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Measured model speed, Run 8</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="8379" width="300" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">R.Tm</e>
+          <e type="operand">47.7120614242554</e>
+          <e type="operand" style="unit">N</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="8379" width="345" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Measured model resistance, Run 8</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="8433" width="333" height="97" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">V.ref5</e>
+          <e type="operand">g</e>
+          <e type="operand">∇.m</e>
+          <e type="operand">1</e>
+          <e type="operand">3</e>
+          <e type="operator" args="2">/</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="function" args="1">sqrt</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.7159</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="8433" width="353" height="33" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">√(g∇^(1/3)) of the model at 16.8 °C</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="8514" width="230" height="77" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">Fr</e>
+          <e type="operand">V.m8</e>
+          <e type="operand">V.ref5</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">2.3309</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="8514" width="107" height="33" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Fr = Fn∇</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="8586" width="658" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p>Regression coefficients (Equations 5.11 and 5.12, wetted-area runs)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="8631" width="295" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">a.0</e>
+          <e type="operand">0.9050494603602045</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="8685" width="328" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">a.1</e>
+          <e type="operand">0.27648906094303555</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="8739" width="321" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">a.2</e>
+          <e type="operand">0.032855167206842784</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="8784" width="282" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">c.0</e>
+          <e type="operand">1.951194206411187</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="8838" width="328" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">c.1</e>
+          <e type="operand">0.30797382005619406</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="8892" width="478" height="62" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">S.m</e>
+          <e type="operand">a.0</e>
+          <e type="operand">a.1</e>
+          <e type="operand">Fr</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">a.2</e>
+          <e type="operand">Fr</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">+</e>
+          <e type="bracket">(</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.4391</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="8892" width="360" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Model wetted surface, Equation 5.11</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="8964" width="348" height="44" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">L.km</e>
+          <e type="operand">c.0</e>
+          <e type="operand">c.1</e>
+          <e type="operand">Fr</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">+</e>
+          <e type="bracket">(</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.2333</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="8964" width="394" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Model wetted keel length, Equation 5.12</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="9018" width="325" height="77" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">Rn.m</e>
+          <e type="operand">V.m8</e>
+          <e type="operand">L.km</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">ν.m</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">4.5392</e>
+          <e type="operand">10</e>
+          <e type="operand">6</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="9018" width="377" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Model Reynolds number, Equation 5.7</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="9099" width="376" height="98" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">c.Tm</e>
+          <e type="operand">R.Tm</e>
+          <e type="operand">0.5</e>
+          <e type="operand">ρ.m</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">V.m8</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">S.m</e>
+          <e type="operator" args="2">*</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.0136</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="9099" width="134" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Equation 5.5</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="9171" width="331" height="120" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">c.Fm</e>
+          <e type="operand">0.075</e>
+          <e type="operand">Rn.m</e>
+          <e type="function" args="1">ln</e>
+          <e type="operand">10</e>
+          <e type="function" args="1">ln</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.0035</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="9171" width="286" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">ITTC 1957 line, Equation 5.6</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="9252" width="262" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">c.R</e>
+          <e type="operand">c.Tm</e>
+          <e type="operand">c.Fm</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.0101</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="9252" width="331" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Residual coefficient, Equation 5.8</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="9306" width="295" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">V.s</e>
+          <e type="operand">V.m8</e>
+          <e type="operand">SF</e>
+          <e type="function" args="1">sqrt</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">22.3576</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="9306" width="302" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Vessel speed (Froude scaling)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="9351" width="333" height="97" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">V.kn</e>
+          <e type="operand">V.s</e>
+          <e type="operand">0.514444</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">43.4597</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="9351" width="213" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Vessel speed (knots)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="9432" width="288" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">L.ks</e>
+          <e type="operand">L.km</e>
+          <e type="operand">SF</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">38.5421</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="9432" width="256" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Vessel wetted keel length</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="9486" width="312" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">S.s</e>
+          <e type="operand">S.m</e>
+          <e type="operand">SF</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">428.7987</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="9486" width="223" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Vessel wetted surface</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="9558" width="314" height="77" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">Rn.s</e>
+          <e type="operand">V.s</e>
+          <e type="operand">L.ks</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">ν.s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">7.2468</e>
+          <e type="operand">10</e>
+          <e type="operand">8</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="9558" width="251" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Vessel Reynolds number</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="9639" width="289" height="77" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">Rn.ratio</e>
+          <e type="operand">Rn.s</e>
+          <e type="operand">Rn.m</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">159.6512</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="9639" width="189" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">≈ 160 times higher</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="9720" width="331" height="120" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">c.Fs</e>
+          <e type="operand">0.075</e>
+          <e type="operand">Rn.s</e>
+          <e type="function" args="1">ln</e>
+          <e type="operand">10</e>
+          <e type="function" args="1">ln</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.0016</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="9720" width="206" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Equation 5.6, vessel</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="9819" width="409" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">c.A</e>
+          <e type="operand">0.00035</e>
+          <e type="operand">2</e>
+          <e type="operand">50</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">10</e>
+          <e type="operand">6</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.0002</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="9819" width="315" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Correlation allowance, L = 50 m</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="9900" width="303" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">c.Ts</e>
+          <e type="operand">c.R</e>
+          <e type="operand">c.Fs</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">c.A</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.012</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="9900" width="134" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Equation 5.9</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="9954" width="474" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">R.Ts</e>
+          <e type="operand">c.Ts</e>
+          <e type="operand">0.5</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">ρ.s</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">V.s</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">S.s</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.3182</e>
+          <e type="operand">10</e>
+          <e type="operand">6</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">N</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="9954" width="395" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Equation 5.10: required thrust (1318 kN)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="10026" width="781" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p>Regression limit: Fr at which the fitted keel length equals the 1.6 m planing length</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="10071" width="294" height="81" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">Fr.Lp</e>
+          <e type="operand">c.0</e>
+          <e type="operand">1.6</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operand">c.1</e>
+          <e type="operator" args="1">-</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.1403</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="10071" width="323" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Below this, Lk &gt; Lp (Runs 1 to 4)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="10152" width="783" height="32" border="true" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p>14. Full-scale Savitsky prediction at the same Fr (Savitsky_FullScale_vs_ITTC.m)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="10197" width="302" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">V.S</e>
+          <e type="operand">Fr</e>
+          <e type="operand">V.refs</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">22.3576</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="10197" width="332" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Equals V.s: same Froude number</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="10251" width="237" height="79" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">C.vs</e>
+          <e type="operand">V.S</e>
+          <e type="operand">g</e>
+          <e type="operand">b.s</e>
+          <e type="operator" args="2">*</e>
+          <e type="function" args="1">sqrt</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">2.019</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="10251" width="178" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Speed coefficient</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="10323" width="392" height="98" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">C.Lbs</e>
+          <e type="operand">Δ.s</e>
+          <e type="operand">0.5</e>
+          <e type="operand">ρ.s</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">V.S</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">b.s</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.2072</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="10323" width="163" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Load coefficient</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="10404" width="493" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p>Equilibrium trim, CL0, λ and Cf, solved by the code</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="10449" width="218" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">τ.s</e>
+          <e type="operand">6.7662767222</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="10449" width="112" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Trim (deg)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="10503" width="239" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">C.L0s</e>
+          <e type="operand">0.2592875072</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="10548" width="218" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">λ.s</e>
+          <e type="operand">2.4614201492</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="10602" width="254" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">C.fs</e>
+          <e type="operand">0.001644408182</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="10656" width="234" height="68" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">τ.sr</e>
+          <e type="operand">τ.s</e>
+          <e type="operand">π</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">180</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.1181</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="10656" width="108" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Trim (rad)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="10728" width="621" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">r.6</e>
+          <e type="operand">C.L0s</e>
+          <e type="operand">0.0065</e>
+          <e type="operand">β</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">C.L0s</e>
+          <e type="operand">0.6</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">-</e>
+          <e type="operand">C.Lbs</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">8.3164</e>
+          <e type="operand">10</e>
+          <e type="operand">12</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="1">-</e>
+        </result>
+      </math>
+    </region>
+    <region left="747" top="10728" width="230" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Check, Equation 6: ≈ 0</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="10809" width="737" height="116" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">r.7</e>
+          <e type="operand">τ.s</e>
+          <e type="operand">1.1</e>
+          <e type="operator" args="2">^</e>
+          <e type="operand">0.012</e>
+          <e type="operand">λ.s</e>
+          <e type="operand">0.5</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">0.0055</e>
+          <e type="operand">λ.s</e>
+          <e type="operand">2.5</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">C.vs</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">+</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">C.L0s</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">5.582</e>
+          <e type="operand">10</e>
+          <e type="operand">12</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="10809" width="230" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Check, Equation 7: ≈ 0</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="10890" width="413" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">C.Lds</e>
+          <e type="operand">0.012</e>
+          <e type="operand">λ.s</e>
+          <e type="operand">0.5</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">τ.s</e>
+          <e type="operand">1.1</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.1542</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="10890" width="226" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Dynamic lift coefficient</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="10962" width="596" height="104" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">V.ms</e>
+          <e type="operand">V.S</e>
+          <e type="operand">1</e>
+          <e type="operand">C.Lds</e>
+          <e type="operand">0.0065</e>
+          <e type="operand">β</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">C.Lds</e>
+          <e type="operand">0.6</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operand">λ.s</e>
+          <e type="operand">τ.sr</e>
+          <e type="function" args="1">cos</e>
+          <e type="operator" args="2">*</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">-</e>
+          <e type="function" args="1">sqrt</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">21.8201</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="10962" width="216" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Mean bottom velocity</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="11043" width="341" height="77" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">Re.s</e>
+          <e type="operand">V.ms</e>
+          <e type="operand">λ.s</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">b.s</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">ν.s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">5.646</e>
+          <e type="operand">10</e>
+          <e type="operand">8</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="11043" width="181" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Reynolds number</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="11124" width="502" height="81" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">r.8</e>
+          <e type="operand">0.242</e>
+          <e type="operand">C.fs</e>
+          <e type="function" args="1">sqrt</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">Re.s</e>
+          <e type="operand">C.fs</e>
+          <e type="operator" args="2">*</e>
+          <e type="function" args="1">ln</e>
+          <e type="operand">10</e>
+          <e type="function" args="1">ln</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.4556</e>
+          <e type="operand">10</e>
+          <e type="operand">10</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="1">-</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="11124" width="238" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Check, Schoenherr: ≈ 0</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="11196" width="567" height="92" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">D.fs</e>
+          <e type="operand">C.fs</e>
+          <e type="operand">ΔC.f</e>
+          <e type="operator" args="2">+</e>
+          <e type="bracket">(</e>
+          <e type="operand">ρ.s</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">V.ms</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">λ.s</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">b.s</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">2</e>
+          <e type="operand">βr</e>
+          <e type="function" args="1">cos</e>
+          <e type="operator" args="2">*</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">2.0193</e>
+          <e type="operand">10</e>
+          <e type="operand">5</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">N</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="11196" width="133" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Friction drag</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="11277" width="494" height="79" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">D.s</e>
+          <e type="operand">Δ.s</e>
+          <e type="operand">τ.sr</e>
+          <e type="function" args="1">tan</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">D.fs</e>
+          <e type="operand">τ.sr</e>
+          <e type="function" args="1">cos</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.1885</e>
+          <e type="operand">10</e>
+          <e type="operand">6</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">N</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="11277" width="296" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Savitsky resistance (1188 kN)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="11358" width="467" height="143" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">C.ps</e>
+          <e type="operand">0.75</e>
+          <e type="operand">1</e>
+          <e type="operand">5.21</e>
+          <e type="operand">C.vs</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">λ.s</e>
+          <e type="operand">2</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">2.39</e>
+          <e type="operator" args="2">+</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.5804</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="11358" width="295" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Centre-of-pressure coefficient</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="11493" width="406" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">l.cs</e>
+          <e type="operand">LCG.s</e>
+          <e type="operand">C.ps</e>
+          <e type="operand">λ.s</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">b.s</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.3569</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="1">-</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="11493" width="252" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Centre of pressure to CG</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="11547" width="388" height="68" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">a.s</e>
+          <e type="operand">VCG.s</e>
+          <e type="operand">b.s</e>
+          <e type="operand">4</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">βr</e>
+          <e type="function" args="1">tan</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.8596</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="11547" width="181" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Friction-force arm</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="11628" width="935" height="85" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">M.ress</e>
+          <e type="operand">Δ.s</e>
+          <e type="operand">1</e>
+          <e type="operand">τ.sr</e>
+          <e type="function" args="1">sin</e>
+          <e type="operand">τ.sr</e>
+          <e type="operand">εr</e>
+          <e type="operator" args="2">+</e>
+          <e type="function" args="1">sin</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operand">l.cs</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">τ.sr</e>
+          <e type="function" args="1">cos</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">f.s</e>
+          <e type="operand">τ.sr</e>
+          <e type="function" args="1">sin</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">D.fs</e>
+          <e type="operand">a.s</e>
+          <e type="operand">f.s</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">+</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.0008</e>
+          <e type="operand" style="unit">J</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="11628" width="392" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Moment residual ≈ 0 (relative to Δ.s·b.s)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="11700" width="184" height="77" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">r.s</e>
+          <e type="operand">LCG.s</e>
+          <e type="operand">b.s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.4</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="11700" width="361" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">LCG / beam = 1.4, as at model scale</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="11781" width="888" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">M.s</e>
+          <e type="operand">0.98</e>
+          <e type="operand">2</e>
+          <e type="operand">r.s</e>
+          <e type="operand">1.45</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">2</e>
+          <e type="operator" args="1">-</e>
+          <e type="operand">Fr</e>
+          <e type="operand">0.85</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">*</e>
+          <e type="function" args="1">exp</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">3</e>
+          <e type="operand">r.s</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">3</e>
+          <e type="operator" args="1">-</e>
+          <e type="operand">Fr</e>
+          <e type="operand">0.85</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operator" args="2">*</e>
+          <e type="function" args="1">exp</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.0991</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="11781" width="218" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">M-factor, Equation 18</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="11862" width="318" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">D.sM</e>
+          <e type="operand">M.s</e>
+          <e type="operand">D.s</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">1.3063</e>
+          <e type="operand">10</e>
+          <e type="operand">6</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">N</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="11862" width="399" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Savitsky + M-factor resistance (1306 kN)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="12087" width="774" height="32" border="true" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p>15. Difference from the ITTC 1957 thrust (Equation 5.1, ITTC 1957 as reference)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="12132" width="350" height="79" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">e.SI</e>
+          <e type="operand">D.s</e>
+          <e type="operand">R.Ts</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operand">R.Ts</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">100</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">9.8373</e>
+          <e type="operator" args="1">-</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="12132" width="133" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Savitsky (%)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="12213" width="361" height="79" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">e.MI</e>
+          <e type="operand">D.sM</e>
+          <e type="operand">R.Ts</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operand">R.Ts</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">100</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.9018</e>
+          <e type="operator" args="1">-</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="12213" width="235" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Savitsky + M-factor (%)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="12294" width="724" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p>Mean absolute difference, bare Savitsky, 10 points with Fr ≥ 1.0 (Table 5.4)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="12339" width="262" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">e.s1</e>
+          <e type="operand">11.4373933576</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="12375" width="262" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">e.s2</e>
+          <e type="operand">13.5768807461</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="12447" width="249" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">e.s3</e>
+          <e type="operand">8.3262106330</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="12492" width="249" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">e.s4</e>
+          <e type="operand">9.8149265951</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="12528" width="249" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">e.s5</e>
+          <e type="operand">9.8373637015</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="12573" width="249" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">e.s6</e>
+          <e type="operand">9.0237461696</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="12609" width="249" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">e.s7</e>
+          <e type="operand">9.7795336818</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="12654" width="262" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">e.s8</e>
+          <e type="operand">10.2913868817</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="12690" width="262" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">e.s9</e>
+          <e type="operand">11.5078128492</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="738" top="12726" width="293" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Mean absolute difference (%)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="12735" width="272" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">e.s10</e>
+          <e type="operand">11.4857642223</e>
+          <e type="operator" args="1">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="45" top="12771" width="901" height="72" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">MAD.S</e>
+          <e type="operand">e.s1</e>
+          <e type="function" args="1">abs</e>
+          <e type="operand">e.s2</e>
+          <e type="function" args="1">abs</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">e.s3</e>
+          <e type="function" args="1">abs</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">e.s4</e>
+          <e type="function" args="1">abs</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">e.s5</e>
+          <e type="function" args="1">abs</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">e.s6</e>
+          <e type="function" args="1">abs</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">e.s7</e>
+          <e type="function" args="1">abs</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">e.s8</e>
+          <e type="function" args="1">abs</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">e.s9</e>
+          <e type="function" args="1">abs</e>
+          <e type="operator" args="2">+</e>
+          <e type="operand">e.s10</e>
+          <e type="function" args="1">abs</e>
+          <e type="operator" args="2">+</e>
+          <e type="bracket">(</e>
+          <e type="operand">10</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">10.5081</e>
+        </result>
+      </math>
+    </region>
+    <region left="45" top="12852" width="851" height="32" border="true" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p>16. Thrust analysis: thrust-to-weight ratio, effective power and friction share (Section 5.5)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="12897" width="210" height="77" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">TW</e>
+          <e type="operand">R.Ts</e>
+          <e type="operand">Δ.s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.1588</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="12897" width="401" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Thrust-to-weight ratio at the peak (0.159)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="12969" width="318" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">P.E</e>
+          <e type="operand">R.Ts</e>
+          <e type="operand">V.s</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">2.9471</e>
+          <e type="operand">10</e>
+          <e type="operand">7</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">W</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="12969" width="377" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Effective power at the peak (29.5 MW)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="13023" width="310" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">R.T11</e>
+          <e type="operand">1256624.04178926</e>
+          <e type="operand" style="unit">N</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="13023" width="361" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">ITTC 1957 thrust, Run 11 (Fr = 3.23)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="13077" width="361" height="79" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">δ.T</e>
+          <e type="operand">R.T11</e>
+          <e type="operand">R.Ts</e>
+          <e type="operator" args="2">-</e>
+          <e type="bracket">(</e>
+          <e type="operand">R.Ts</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">100</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">4.6682</e>
+          <e type="operator" args="1">-</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="13077" width="224" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Fall after the peak (%)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="13149" width="310" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">R.T13</e>
+          <e type="operand">1255523.46493913</e>
+          <e type="operand" style="unit">N</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="13149" width="361" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">ITTC 1957 thrust, Run 13 (Fr = 3.83)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="13203" width="314" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">V.s13</e>
+          <e type="operand">36.7223080709757</e>
+          <e type="operand" style="unit">m</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="13203" width="341" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Vessel speed, Run 13 (71.4 knots)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="13284" width="369" height="60" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">P.E13</e>
+          <e type="operand">R.T13</e>
+          <e type="operand">V.s13</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">4.6106</e>
+          <e type="operand">10</e>
+          <e type="operand">7</e>
+          <e type="operator" args="2">^</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand" style="unit">W</e>
+          <e type="operator" args="2">*</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="13284" width="389" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Effective power at top speed (46.1 MW)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="13374" width="335" height="79" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">k.I</e>
+          <e type="operand">c.Fs</e>
+          <e type="operand">c.A</e>
+          <e type="operator" args="2">+</e>
+          <e type="bracket">(</e>
+          <e type="operand">c.Ts</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">100</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">15.3791</e>
+        </result>
+      </math>
+    </region>
+    <region left="531" top="13383" width="563" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Friction share of the ITTC 1957 resistance at the peak (%)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="13500" width="332" height="114" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">k.S</e>
+          <e type="operand">D.fs</e>
+          <e type="operand">τ.sr</e>
+          <e type="function" args="1">cos</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">D.s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">100</e>
+          <e type="operator" args="2">*</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">17.1095</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="13500" width="542" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Friction share of the Savitsky resistance at the peak (%)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="13617" width="672" height="32" border="true" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p>17. Difference in D/Δ at model and full scale at Fr = 2.33 (Section 5.6)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="13662" width="230" height="68" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">DW.m8</e>
+          <e type="operand">R.Tm</e>
+          <e type="operand">W</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.1801</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="13662" width="353" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Measured model D/Δ, LCG 560 mm</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="13734" width="254" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">DW.S8</e>
+          <e type="operand">0.16457302147</e>
+          <e type="operator" args="2">:</e>
+        </input>
+      </math>
+    </region>
+    <region left="558" top="13734" width="463" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Savitsky model D/Δ at this Fr (Ch5 comparison)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="13788" width="287" height="42" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">g.m</e>
+          <e type="operand">DW.m8</e>
+          <e type="operand">DW.S8</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.0156</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="13788" width="293" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Model-scale difference in D/Δ</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="13842" width="260" height="77" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">g.s</e>
+          <e type="operand">R.Ts</e>
+          <e type="operand">Δ.s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operand">D.s</e>
+          <e type="operand">Δ.s</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">-</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.0156</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="13842" width="492" height="32" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Full-scale difference in D/Δ (0.0156 at both scales)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="13914" width="636" height="33" border="true" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p>18. Speed coefficient at the M-factor limit Fn∇ = 1.0 (Section 5.2)</p>
+        </content>
+      </text>
+    </region>
+    <region left="45" top="13959" width="280" height="70" color="#000000" fontSize="16">
+      <math>
+        <input>
+          <e type="operand">C.v1</e>
+          <e type="operand">1.0</e>
+          <e type="operand">V.ref</e>
+          <e type="operator" args="2">*</e>
+          <e type="operand">g</e>
+          <e type="operand">b</e>
+          <e type="operator" args="2">*</e>
+          <e type="function" args="1">sqrt</e>
+          <e type="operator" args="2">/</e>
+          <e type="operator" args="2">:</e>
+        </input>
+        <result action="numeric">
+          <e type="operand">0.8662</e>
+        </result>
+      </math>
+    </region>
+    <region left="558" top="13959" width="243" height="33" color="#000000" fontSize="16">
+      <text lang="eng" fontFamily="Arial" fontSize="16">
+        <content>
+          <p style="font-style: italic;">Cv ≥ 0.87 for Fn∇ ≥ 1.0</p>
+        </content>
+      </text>
+    </region>
+  </regions>
+</worksheet>
