@@ -1,74 +1,143 @@
-% Savitsky (1964) Table 1 worked example (p. 89): check of the planing
-% Chapter 3. This script is the verification scriptT
-
+% Table_1_Verfication.m
+% Checks my Savitsky (1964) code against the worked example in
+% Savitsky (1964), Table 1, p. 89 (Chapter 3, Table 3.1).
+% Units: Imperial, as in the paper (lb, ft, s, slug).
 clear; clc;
-hull = struct('b', 14, 'W', 60000, 'beta', 10, 'VCG', 2.0, 'f', 0.50, 'eps', 4, 'Lp', Inf);
-c    = struct('LCG', 29.0, 'rho', 1.94, 'nu', 1.0e-5);   % rho from the C_Lb line (Eq. 3.5), nu from Row 6 (Eq. 3.10)
-g    = 32.2;       % gravitational acceleration (ft/s^2)
-V    = 67.5;       % 40 knots (ft/s)
-dCf  = 0.0004;     % ATTC standard roughness allowance, Delta C_A (Eq. 3.12) (Row 8)
-tauP  = [2 3 4];   % trial trim angles (deg) used in the paper's Table 1 (trial angles of Eq. 3.18)
-pub   = [3.85 2.60 1.86; 67.0 66.6 66.2; 3.61e8 2.42e8 1.73e8; 0.00174 0.00184 0.00192; ...
-         7340 5160 3760; 9434 8304 7948; -149960 336600 648350];
-% Row labels, with the equation that produces each quantity
-names = {'lambda (3.7)', 'Vm (3.8)', 'Re (3.10)', 'Cf (3.11)', 'Df (3.13)', 'D (3.14)', 'Eq. 3.17 resid.'};
-res = zeros(7, 3);
+% Input data from Savitsky (1964), Table 1
+b    = 14;        % chine beam (ft)
+W    = 60000;     % displacement weight (lb)
+beta = 10;        % deadrise angle (deg)
+LCG  = 29.0;      % LCG from transom (ft)
+VCG  = 2.0;       % VCG above keel (ft)
+f    = 0.50;      % thrust line to CG (ft)
+epsilon = 4;      % thrust inclination to keel (deg)
+V    = 67.5;      % speed, 40 knots (ft/s)
+g    = 32.2;      % gravitational acceleration (ft/s^2)
+rho  = 1.94;      % water density (slug/ft^3)
+nu   = 1.0e-5;    % kinematic viscosity (ft^2/s)
+dCf  = 0.0004;    % ATTC roughness allowance, Delta C_f (Eq. 3.12)
+%  Values printed in Savitsky's Table 1 at trim = 2, 3 and 4 deg 
+tauTrial = [2 3 4];
+paper.lambda = [3.85     2.60     1.86   ];   % Row 4
+paper.Vm     = [67.0     66.6     66.2   ];   % Row 5
+paper.Re     = [3.61e8   2.42e8   1.73e8 ];   % Row 6
+paper.Cf     = [0.00174  0.00184  0.00192];   % Row 7
+paper.Df     = [7340     5160     3760   ];   % Row 10
+paper.D      = [9434     8304     7948   ];   % Row 16
+paper.Mres   = [-149960  336600   648350 ];   % Row 30 (moment residual)
+%  Run my code at the same three trim angles 
 for i = 1:3
-    [M, D, lam, Vm, Re, Cf, Df] = planing(tauP(i), V, c, hull, g, dCf);
-    res(:, i) = [lam; Vm; Re; Cf; Df; D; M];
+    r = planing(tauTrial(i), b, W, beta, LCG, VCG, f, epsilon, V, g, rho, nu, dCf);
+    mine.lambda(i) = r.lambda;
+    mine.Vm(i)     = r.Vm;
+    mine.Re(i)     = r.Re;
+    mine.Cf(i)     = r.Cf;
+    mine.Df(i)     = r.Df;
+    mine.D(i)      = r.D;
+    mine.Mres(i)   = r.Mres;
 end
-err = 100 * (res - pub) ./ abs(pub);
-fprintf('%-16s', 'Row');
-fprintf('   tau = %d deg: code, paper, error ', tauP);
+% Print the row-by-row comparison 
+rows   = {'lambda', 'Vm', 'Re', 'Cf', 'Df', 'D', 'Mres'};
+labels = {'lambda (Eq 3.7)', 'Vm (Eq 3.8)', 'Re (Eq 3.10)', 'Cf (Eq 3.11)', ...
+          'Df (Eq 3.13)', 'D (Eq 3.14)', 'Mres (Eq 3.17)'};
+fprintf('%-16s', 'Quantity');
+for i = 1:3
+    fprintf('|  tau = %d deg: mine, paper, diff   ', tauTrial(i));
+end
 fprintf('\n');
-for k = 1:7
-    fprintf('%-16s', names{k});
-    fprintf('   %10.4g %10.4g %+6.1f%%        ', [res(k, :); pub(k, :); err(k, :)]);
+for k = 1:numel(rows)
+    fprintf('%-16s', labels{k});
+    for i = 1:3
+        m = mine.(rows{k})(i);
+        p = paper.(rows{k})(i);
+        fprintf('|  %10.4g %10.4g %+6.1f%%  ', m, p, percentDiff(m, p));
+    end
     fprintf('\n');
 end
-% Equilibrium trim by linear interpolation of the Eq. 3.17 residual between
-% the bracketing trial angles (2 and 3 deg), Eq. 3.18:
-%   tau_eq = tau_i - R_i*(tau_(i+1) - tau_i)/(R_(i+1) - R_i)
-te = 2 + res(7, 1) / (res(7, 1) - res(7, 2));
-% Drag at equilibrium: the resistance array (Eq. 3.14) is interpolated linearly
-% to tau_eq, as described after Eq. 3.18.
-De = res(6, 1) + (te - 2) * (res(6, 2) - res(6, 1));
-fprintf('\nEquilibrium by linear interpolation between 2 and 3 deg (Eq. 3.18, as in the paper):\n');
-fprintf('  trim %.3f deg (paper 2.3 deg, %+.1f%%), drag %.0f lb (paper 9095 lb, %+.1f%%)\n', ...
-    te, 100 * (te - 2.3) / 2.3, De, 100 * (De - 9095) / 9095);
-% Exact equilibrium: root of the Eq. 3.17 residual, no interpolation
-tx = fzero(@(t) planing(t, V, c, hull, g, dCf), [2 3]);
-[~, Dx] = planing(tx, V, c, hull, g, dCf);
-fprintf('Exact equilibrium (root of Eq. 3.17): trim %.3f deg, drag %.0f lb\n', tx, Dx);
-% Paper Row 10 recomputed with Eq. 3.13: Df = (Cf + dCA)*rho*lambda*Vm^2*b^2/(2*cos(beta)),
-% where 0.00214 = Cf + dCA (Row 8) at tau = 2 deg
-row10 = 0.00214 * 1.94 * 67.0^2 * 3.85 * 14^2 / (2 * cosd(10));
-fprintf('\nPaper Row 10 at 2 deg recomputed from its own Rows 4, 5 and 9 with rho = 1.94 (Eq. 3.13): %.0f lb (printed 7340 lb)\n', row10);
+%    Equilibrium trim and drag (Eq. 3.18) 
+% Linear interpolation between 2 and 3 deg, where the moment residual
+tauEq = interpTrim(tauTrial(1), tauTrial(2), mine.Mres(1), mine.Mres(2));
+DEq   = mine.D(1) + (tauEq - tauTrial(1)) * (mine.D(2) - mine.D(1));
 
-function [Mres, D, lam, Vm, Re, Cf, Df] = planing(tau, V, c, hull, g, dCf)
-    % Savitsky (1964) planing solution at one trial trim angle tau (deg).
-    % Mres is the pitching-moment residual of Eq. 3.17 (Savitsky's Eq. 35).
-    % Note: hull.W is the displacement weight (Delta in the document).
-    b    = hull.b;
-    W    = hull.W;
-    beta = hull.beta;
-    Cv   = V / sqrt(g * b);                                              % Eq. 3.4  speed coefficient
-    CLb  = W / (0.5 * c.rho * V^2 * b^2);                                % Eq. 3.5  deadrise surface load coefficient
-    CL0  = fzero(@(x) x - 0.0065 * beta * x^0.6 - CLb, [CLb, 2 * CLb + 0.1]);   % Eq. 3.6  zero-deadrise lift coefficient
-    lam  = fzero(@(x) tau^1.1 * (0.012 * sqrt(x) + 0.0055 * x^2.5 / Cv^2) - CL0, [0.01, 20]);   % Eq. 3.7  mean wetted length-to-beam ratio
-    CLd  = 0.012 * sqrt(lam) * tau^1.1;                                  % Eq. 3.9  C_Ld, dynamic component of the lift coefficient (first term of Eq. 3.7; Savitsky Eq. 20), used in Eq. 3.8
-    Vm   = V * sqrt(max(1 - (CLd - 0.0065 * beta * CLd^0.6) / (lam * cosd(tau)), 0.36));     % Eq. 3.8  mean bottom velocity (floored at sqrt(0.36)*V)
-    Re   = Vm * lam * b / c.nu;                                          % Eq. 3.10  Reynolds number
-    Cf   = schoenherr(Re);                                               % Eq. 3.11 Schoenherr friction line
-    Df   = (Cf + dCf) * c.rho * Vm^2 * lam * b^2 / (2 * cosd(beta));     % Eq. 3.12 (C_F,tot = C_F + dCA) inserted in Eq. 3.13 (friction drag)
-    D    = W * tand(tau) + Df / cosd(tau);                               % Eq. 3.14 total hydrodynamic resistance
-    Cp   = 0.75 - 1 / (5.21 * Cv^2 / lam^2 + 2.39);                      % Eq. 3.15 centre of pressure
-    lc   = c.LCG - Cp * lam * b;                                         % Eq. 3.16 moment arm c (named lc to avoid clashing with the struct c)
-    a    = hull.VCG - b / 4 * tand(beta);                                % Eq. 3.1  friction-line arm a
-    Mres = W * ((1 - sind(tau) * sind(tau + hull.eps)) * lc / cosd(tau) - hull.f * sind(tau)) ...
-           + Df * (a - hull.f);                                          % Eq. 3.17 pitching moment equilibrium (zero at tau_eq)
+% Savitsky's equilibrium trim and drag, as printed in Table 1
+tauPaper = 2.3;                                              % deg
+DPaper   = 9095;                                             % lb
+
+fprintf('\nEquilibrium (linear interpolation between 2 and 3 deg, Eq. 3.18):\n');
+fprintf('  trim: mine %.3f deg, paper %.1f deg, diff %+.1f%%\n', ...
+        tauEq, tauPaper, percentDiff(tauEq, tauPaper));
+fprintf('  drag: mine %.0f lb,   paper %.0f lb,   diff %+.1f%%\n', ...
+        DEq, DPaper, percentDiff(DEq, DPaper));
+% Exact equilibrium (no interpolation)
+residual = @(t) getResidual(t, b, W, beta, LCG, VCG, f, epsilon, V, g, rho, nu, dCf);
+tauExact = fzero(residual, [2 3]);
+rExact   = planing(tauExact, b, W, beta, LCG, VCG, f, epsilon, V, g, rho, nu, dCf);
+fprintf('\nExact equilibrium (root of Eq. 3.17): trim %.3f deg, drag %.0f lb\n', ...
+        tauExact, rExact.D);
+% Side check: Savitsky's Row 10 from his own numbers 
+% Df at 2 deg from Eq. 3.13, using his Rows 4, 5 and 9 (Cf + dCf = 0.00214)
+Df10 = 0.00214 * rho * 67.0^2 * 3.85 * b^2 / (2 * cosd(beta));
+fprintf('\nRow 10 at 2 deg recomputed from the paper''s own values: %.0f lb (printed 7340 lb)\n', Df10);
+% Functions
+function r = planing(tau, b, W, beta, LCG, VCG, f, epsilon, V, g, rho, nu, dCf)
+% Savitsky (1964) planing equations at one trial trim angle tau (deg).
+% Returns a struct with the main results and the moment residual Mres
+% (Eq. 3.17), which is zero at the equilibrium trim.
+    % Eq. 3.4: speed coefficient
+    Cv = V / sqrt(g * b);
+    % Eq. 3.5: lift coefficient of the deadrise surface
+    CLb = W / (0.5 * rho * V^2 * b^2);
+    % Eq. 3.6: zero-deadrise lift coefficient (solve CLb = CL0 - 0.0065*beta*CL0^0.6)
+    CL0 = fzero(@(x) x - 0.0065 * beta * x^0.6 - CLb, [CLb, 2 * CLb + 0.1]);
+    % Eq. 3.7: mean wetted length-to-beam ratio lambda
+    lambda = fzero(@(x) tau^1.1 * (0.012 * sqrt(x) + 0.0055 * x^2.5 / Cv^2) - CL0, ...
+                   [0.01, 20]);
+    % Eq. 3.9: dynamic part of the lift coefficient
+    CLd = 0.012 * sqrt(lambda) * tau^1.1;
+    % Eq. 3.8: mean bottom velocity (term under the root floored at 0.36)
+    term = 1 - (CLd - 0.0065 * beta * CLd^0.6) / (lambda * cosd(tau));
+    Vm   = V * sqrt(max(term, 0.36));
+    % Eq. 3.10: Reynolds number based on the mean wetted length
+    Re = Vm * lambda * b / nu;
+    % Eq. 3.11: Schoenherr friction coefficient
+    Cf = schoenherr(Re);
+    % Eqs. 3.12 and 3.13: friction drag, with the roughness allowance added
+    CfTot = Cf + dCf;
+    Df    = CfTot * rho * Vm^2 * lambda * b^2 / (2 * cosd(beta));
+    % Eq. 3.14: total resistance
+    D = W * tand(tau) + Df / cosd(tau);
+    % Eq. 3.15: centre of pressure, as a fraction of the mean wetted length
+    Cp = 0.75 - 1 / (5.21 * Cv^2 / lambda^2 + 2.39);
+    % Eq. 3.16: moment arm c between the centre of pressure and the CG
+    c = LCG - Cp * lambda * b;
+    % Eq. 3.1: distance a between the friction force and the CG
+    a = VCG - (b / 4) * tand(beta);
+    % Eq. 3.17: pitching-moment residual about the CG
+    Mres = W * ((1 - sind(tau) * sind(tau + epsilon)) * c / cosd(tau) - f * sind(tau)) ...
+           + Df * (a - f);
+    % Collect the results
+    r.lambda = lambda;
+    r.Vm     = Vm;
+    r.Re     = Re;
+    r.Cf     = Cf;
+    r.Df     = Df;
+    r.D      = D;
+    r.Mres   = Mres;
 end
 function Cf = schoenherr(Re)
-    % Eq. 3.11: 0.242/sqrt(Cf) = log10(Re*Cf), solved numerically for Cf
+% Eq. 3.11: 0.242/sqrt(Cf) = log10(Re*Cf), solved for Cf
     Cf = fzero(@(x) 0.242 / sqrt(x) - log10(Re * x), [1e-4, 0.1]);
+end
+function M = getResidual(tau, b, W, beta, LCG, VCG, f, epsilon, V, g, rho, nu, dCf)
+% Moment residual only, so that fzero can find the equilibrium trim
+    r = planing(tau, b, W, beta, LCG, VCG, f, epsilon, V, g, rho, nu, dCf);
+    M = r.Mres;
+end
+function tauEq = interpTrim(tau1, tau2, M1, M2)
+% Eq. 3.18: linear interpolation of the trim where the residual is zero
+    tauEq = tau1 - M1 * (tau2 - tau1) / (M2 - M1);
+end
+function d = percentDiff(mine, paper)
+% Percentage difference of my value relative to the paper's value
+    d = 100 * (mine - paper) / abs(paper);
 end
