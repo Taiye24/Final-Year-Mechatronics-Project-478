@@ -1,4 +1,4 @@
-% Sensitivity checks quoted in Section 5.5, using the same functions and
+% Sensitivity checks quoted in Section 5.6, using the same functions and
 % inputs as Savitsky_Code_Test_m_Factor_All.m.
 
 clear; clc;
@@ -15,7 +15,7 @@ dCf = 0.0004;           % ATTC standard roughness allowance
 
 % Water properties: ITTC 7.5-02-01-03 (2011) at 15.8 degC (640 mm) and 16.8 degC
 % 640 mm, 3 m/s point: Set A corrected in Data_Eval_640.xls (Fn, D/W and tau are the
-% means of Sets A-C from Table X.1 of Calculations_Chapters_4_and_5.xlsx)
+% means of Sets A-C from Table F.1 of Calculations_Chapters_4_and_5.xlsx)
 tc(1) = struct('name', '640 mm', 'LCG', 0.640, 'rho', 998.9783, 'nu', 1.1150e-6, ...
     'Fn',  [0.238107 0.537875 0.839161 1.139841 1.441471 1.738390 2.040486 2.341884 2.643483 2.940551 3.240283 3.540689 3.839838], ...
     'DW',  [0.004009 0.018779 0.062202 0.107947 0.121812 0.130143 0.140295 0.153987 0.163410 0.171417 0.178555 0.187695 0.198168], ...
